@@ -9,7 +9,11 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
+<<<<<<< HEAD
     <ProjectGuid>{19DD0384-8701-1DCB-C631-07B8116679FB}</ProjectGuid>
+=======
+    <ProjectGuid>{E66FED68-071E-F0AC-3037-51659F892569}</ProjectGuid>
+>>>>>>> parent of 84ae0a9 (MainGame.unity 추가 (#1))
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -56,12 +60,15 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="Assets\ToonEnvironment\Scripts\FreeCamMouseLook.cs" />
     <Compile Include="Assets\ToonEnvironment\Scripts\Rotate.cs" />
     <Compile Include="Assets\ToonEnvironment\Scripts\UIMessage.cs" />
     <Compile Include="Assets\ToonEnvironment\Scripts\SetSortingOrder.cs" />
     <Compile Include="Assets\scripts\Sky.cs" />
     <Compile Include="Assets\scripts\TitleManager.cs" />
+=======
+>>>>>>> parent of 84ae0a9 (MainGame.unity 추가 (#1))
     <Compile Include="Assets\Eventmanager.cs" />
   </ItemGroup>
   <ItemGroup>
