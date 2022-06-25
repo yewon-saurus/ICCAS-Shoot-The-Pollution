@@ -9,8 +9,13 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
+<<<<<<< HEAD
       ticks: 637916504459136910
     m_Hash: 599159656
+=======
+      ticks: 637917431722786717
+    m_Hash: 3497739086
+>>>>>>> 99ced3fbccf342f9061bb746f0376adfffcf2004
   m_LockFileStatus:
 <<<<<<< HEAD
     m_FilePath: C:/Users/user/Documents/GitHub/ICCAS-Shoot-The-Pollution/Packages/packages-lock.json
@@ -21,8 +26,13 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
+<<<<<<< HEAD
       ticks: 637916504823835471
     m_Hash: 3799860606
+=======
+      ticks: 637917431722786717
+    m_Hash: 822393146
+>>>>>>> 99ced3fbccf342f9061bb746f0376adfffcf2004
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -103,6 +113,7 @@ m_PackageAssets:
         - 1.15.17
         - 1.15.18
         - 1.17.0
+        - 1.17.1
         - 2.0.0-preview.6
         - 2.0.0-preview.8
         - 2.0.0-preview.15
@@ -117,6 +128,7 @@ m_PackageAssets:
         - 1.15.17
         - 1.15.18
         - 1.17.0
+        - 1.17.1
         - 2.0.0-preview.6
         - 2.0.0-preview.8
         - 2.0.0-preview.15
