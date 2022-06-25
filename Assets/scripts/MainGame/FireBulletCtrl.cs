@@ -6,7 +6,7 @@ public class FireBulletCtrl : MonoBehaviour
 {
 
     // 속도
-    float speed = 60f;
+    float speed = 100f;
 
     // 총알 삭제 시간
     float delay = 0.5f;
