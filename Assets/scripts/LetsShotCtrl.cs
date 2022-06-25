@@ -30,7 +30,7 @@ public class LetsShotCtrl : MonoBehaviour
         //화면에서 벗어나면 제거
         if (Mathf.Abs(transform.position.x)>8 || transform.position.y < -3)
         {
-            GunCtrl.miss++;
+           // GunCtrl.miss++;
             Destroy(gameObject);
         }
         
