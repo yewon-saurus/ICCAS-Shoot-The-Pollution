@@ -68,6 +68,8 @@
     <Compile Include="Assets\scripts\FireBulletCtrl.cs" />
     <Compile Include="Assets\scripts\OCtrl.cs" />
     <Compile Include="Assets\Eventmanager.cs" />
+    <Compile Include="Assets\scripts\SoundOption.cs" />
+    <Compile Include="Assets\scripts\SetVolume.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
