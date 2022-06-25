@@ -1,1 +1,13 @@
+<<<<<<< HEAD
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"m_AlwaysRefresh":false,"showFog":true,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true,"showVisualEffectGraphs":true,"m_FxEnabled":true},"in2DMode":false,"pivot":{"x":0.0,"y":0.0,"z":0.0},"rotation":{"x":-0.16129280626773835,"y":-0.0035449813585728409,"z":0.000579803017899394,"w":-0.9869099855422974},"size":1.9971284866333008,"orthographic":false}
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"m_AlwaysRefresh":false,"showFog":true,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true,"showVisualEffectGraphs":true,"m_FxEnabled":true},"in2DMode":false,"pivot":{"x":960.0,"y":540.0,"z":0.0},"rotation":{"x":0.13752764463424684,"y":0.02228425070643425,"z":-0.0030948971398174764,"w":0.9902424812316895},"size":994.3858642578125,"orthographic":false}
+=======
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"m_AlwaysRefresh":false,"showFog":true,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true,"showVisualEffectGraphs":true,"m_FxEnabled":true},"in2DMode":false,"pivot":{"x":-1.33860182762146,"y":-12.389394760131836,"z":-1.1344375610351563},"rotation":{"x":0.36342063546180727,"y":-0.016767902299761773,"z":0.006542263086885214,"w":0.9314517974853516},"size":12.090489387512207,"orthographic":false}
+>>>>>>> 814361b0a7f6e17cec27d5457fd3d552a45e53ce
+=======
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"m_AlwaysRefresh":false,"showFog":true,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true,"showVisualEffectGraphs":true,"m_FxEnabled":true},"in2DMode":false,"pivot":{"x":-0.0008504241704940796,"y":-0.19724684953689576,"z":0.523666501045227},"rotation":{"x":0.13157440721988679,"y":0.02527550607919693,"z":-0.003355890279635787,"w":0.9909794926643372},"size":2.0668323040008547,"orthographic":false}
+>>>>>>> 99ced3fbccf342f9061bb746f0376adfffcf2004
+>>>>>>> de64bc6d1b2559ba7d7bc176082346d367b2c06a

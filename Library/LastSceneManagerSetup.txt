@@ -1,5 +1,13 @@
 sceneSetups:
+<<<<<<< HEAD
+<<<<<<< HEAD
+- path: Assets/Scenes/Option.unity
+=======
 - path: Assets/Scenes/MainGame.unity
+>>>>>>> 814361b0a7f6e17cec27d5457fd3d552a45e53ce
+=======
+- path: Assets/Scenes/MainGame.unity
+>>>>>>> 99ced3fbccf342f9061bb746f0376adfffcf2004
   isLoaded: 1
   isActive: 1
   isSubScene: 0
