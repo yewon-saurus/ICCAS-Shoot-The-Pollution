@@ -2,8 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LetsShotCtrl : MonoBehaviour
+public class DontShootCtrl : MonoBehaviour
 {
+    // 명중시 프리팹 연결 오브젝트
+    public Transform oCtrl;
+    // 명중?
+    bool isDead = false;
 
     float speed; // 날아가는 속도
     float gravity; // 충력
@@ -26,20 +30,32 @@ public class LetsShotCtrl : MonoBehaviour
         Vector3 move = new Vector3(speed * dirX, gravity, 0) * Time.deltaTime;
         transform.Translate(move, Space.World);
 
-
-        //화면에서 벗어나면 제거
-        if (Mathf.Abs(transform.position.x)>8 || transform.position.y < -3)
+        // 화면에서 벗어나면 제거
+        if (Mathf.Abs(transform.position.x) > 8 || transform.position.y < -3)
         {
-            GunCtrl.miss++;
+            // GunCtrl.miss++;
             Destroy(gameObject);
         }
         
     }
 
+    // Ouch! 쏘면 안되는 것을 쐈을 때
+    void Ouch()
+    {
+        isDead = true;
+
+        // 명중 됐을 당시 오브젝트 위치 계산하여 Ouch! 오브젝트 위치 설정
+        Vector3 pos = new Vector3(transform.position.x, transform.position.y + 0.2f, 8);
+        Quaternion rot = Quaternion.identity;
+
+        rot.eulerAngles = new Vector3(0, 0, 0);
+        Instantiate(oCtrl, pos, rot);
+    }
+
     void SetPosition()
     {
         // 랜덤으로 속도 설정
-        speed = Random.Range(3, 5f);
+        speed = Random.Range(2, 5f);
 
         // 추락 속도 설정
         gravity = 2f;

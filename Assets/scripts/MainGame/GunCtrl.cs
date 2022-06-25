@@ -18,6 +18,8 @@ public class GunCtrl : MonoBehaviour
     public Transform exp, gunFire, fireBullet;
     // 쏘아야 할 것들
     public Transform co2;
+    // 쏘면 안되는 것들
+    public Transform o2;
 
     // 탄피, 총구위치
     Transform bulletCase, spPoint;
@@ -49,8 +51,8 @@ public class GunCtrl : MonoBehaviour
     }
     private void Update()
     {
-        // 5번 미스 되면 게임 오버
-        if (miss >= 5)
+        // 10번 미스 되면 게임 오버
+        if (miss >= 10)
         {
             gameOver = true;
             overTime = Time.time;
@@ -84,7 +86,7 @@ public class GunCtrl : MonoBehaviour
     // 총 회전 
     void RotateGun()
     {
-        //카메라부터 거리를 설정
+        // 카메라부터 거리를 설정
         Vector3 pos = Input.mousePosition;
 
         // 화면의 기준으로 총의 움직임을 제한한다
@@ -114,6 +116,12 @@ public class GunCtrl : MonoBehaviour
         // 카메라 시점에서 커서 위치 계산
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Physics.Raycast(ray, out hit, Mathf.Infinity);
+
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+        {
+            Debug.Log("충돌함");
+            Debug.Log("충돌체 이름: " + hit.collider.gameObject.name);
+        }
 
         // 총을 클릭하면 실탄 재장전
         if (hit.transform.tag == "Gun" && bulletCnt < 10)
@@ -145,13 +153,27 @@ public class GunCtrl : MonoBehaviour
         switch (hit.transform.tag)
         {
             // LetsShoot 종류의 obj 명중시 점수 처리및 폭발이팩트 생성및 제거
-            case "co2":
+            case "LetsShoot":
                 this.hit++;
-                Instantiate(exp, hit.transform.position, Quaternion.identity);
+                Instantiate(gunFire, hit.transform.position, Quaternion.identity);
+                Destroy(hit.transform.gameObject);
+                break;
+
+            case "DontShoot":
+                miss++;
+                Instantiate(gunFire, hit.transform.position, Quaternion.identity);
+                hit.transform.SendMessage("Ouch", SendMessageOptions.DontRequireReceiver);
                 Destroy(hit.transform.gameObject);
                 break;
 
             // DontShoot 종류의 obj 명중시 미스 처리
+
+            // case "Clay":
+            //     this.hit++;
+            //     Instantiate(exp, hit.transform.position, Quaternion.identity);
+            //     Destroy(hit.transform.gameObject);
+            //     break;
+
             // case "Bird":
             //     Instantiate(gunFire, hit.transform.position, Quaternion.identity);
             //     miss++;
@@ -177,16 +199,16 @@ public class GunCtrl : MonoBehaviour
     // co2 생성
     void MakeCo2()
     {
-        if (Random.Range(0, 1000) > 970 && !GetComponent<Animation>().isPlaying)
+        if (Random.Range(0, 1000) > 996 && !GetComponent<Animation>().isPlaying)
         {
             if (Random.Range(0,100) < 70)
             {
                 Instantiate(co2);
             }
-            // else
-            // {
-            //     Instantiate(bird);
-            // }
+            else
+            {
+                Instantiate(o2);
+            }
         }
     }
 
@@ -209,6 +231,7 @@ public class GunCtrl : MonoBehaviour
     {
         bulletCase.gameObject.GetComponent<Renderer>().enabled = false;
     }
+
     void SetStage()
     {
         width = Screen.width;
@@ -239,7 +262,7 @@ public class GunCtrl : MonoBehaviour
         if (!gameOver)
         {
             // 커서 위치에 조준점 표시
-            GUI.DrawTexture(new Rect(Input.mousePosition.x - 24, height - Input.mousePosition.y - 24, 48, 48),
+            GUI.DrawTexture(new Rect(Input.mousePosition.x - 24, height - Input.mousePosition.y - 24, 150, 150),
                             Resources.Load("crossHair") as Texture2D);
         }
         else
@@ -250,17 +273,17 @@ public class GunCtrl : MonoBehaviour
         // 남은 실탄수 표시
         for (int i = 1; i <= bulletCnt; i++)
         {
-            GUI.DrawTexture(new Rect(i * 12, height - 20, 8, 16), Resources.Load("bullet") as Texture2D);
+            GUI.DrawTexture(new Rect(i * 48, height - 80, 32, 64), Resources.Load("bullet") as Texture2D);
         }
 
         // 점수 등 변수 표시
-        string sHit = "<size='30'>HIT : " + hit + "</size>";
-        string sMiss = "<size='30'>MISS : " + miss + "</size>";
-        string sTime = "<color='yellow'><size='30'>Time : " + (int)time + "</size></color>";
+        string sHit = "<size='60'>HIT : " + hit + "</size>";
+        string sMiss = "<size='60'>MISS : " + miss + "</size>";
+        string sTime = "<color='yellow'><size='60'>Time : " + (int)time + "</size></color>";
 
-        GUI.Label(new Rect(30, 20, 120, 40), sHit);
-        GUI.Label(new Rect(width / 2 - 40, 20, 160, 40), sTime);
-        GUI.Label(new Rect(width - 120, 20, 120, 40), sMiss);
+        GUI.Label(new Rect(60, 40, 240, 80), sHit);
+        GUI.Label(new Rect(width / 2 - 80, 40, 320, 80), sTime);
+        GUI.Label(new Rect(width - 240, 40, 240, 80), sMiss);
 
         // string msg = "Shoot : Left Btn  Charge : Gun Click";
         // GUI.Label(new Rect(width - 380, height - 40, 380, 40), msg);
@@ -277,16 +300,10 @@ public class GunCtrl : MonoBehaviour
             }
 
             // Play Game 버튼 생성 및 버튼On 시 게임다시 진행
-            if (GUI.Button(new Rect(width / 2 - 70, height / 2 - 50, 140, 60), "Play Game"))
+            if (GUI.Button(new Rect(width / 2 - 250, height / 2 - 100, 500, 200), "Play Game"))
             {
                 Application.LoadLevel("MainGame");
             }
-
-            // 게임에서 나옴
-            // if (GUI.Button(new Rect(width / 2 - 70, height / 2 + 50, 140, 60), "Quit Game"))
-            // {
-            //     EditorApplication.isPlaying = false;
-            // }
         }
     }
 }

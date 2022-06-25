@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7083682295725411832}
   - component: {fileID: 7309641537629811853}
   - component: {fileID: 387045520368669319}
-  - component: {fileID: 5541087770709236213}
   - component: {fileID: 5710135136635893229}
   m_Layer: 0
   m_Name: FireBullet
@@ -83,19 +82,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5541087770709236213
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6097143278585388103}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5710135136635893229
 MonoBehaviour:
   m_ObjectHideFlags: 0
