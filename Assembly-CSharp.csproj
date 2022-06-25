@@ -39,10 +39,10 @@
      <Compile Include="Assets\Scripts\GunCtrl.cs" />
      <Compile Include="Assets\Scripts\Sky.cs" />
      <Compile Include="Assets\Scripts\LetsShotCtrl.cs" />
+     <Compile Include="Assets\Scripts\Destroy.cs" />
      <Compile Include="Assets\Scripts\FireBulletCtrl.cs" />
      <Compile Include="Assets\Scripts\OCtrl.cs" />
      <Compile Include="Assets\Eventmanager.cs" />
-     <Compile Include="Assets\Scripts\Destroy.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
