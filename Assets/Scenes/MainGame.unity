@@ -635,11 +635,11 @@ MonoBehaviour:
   sndCocking: {fileID: 8300000, guid: b80c41f533b951145b1d3ebae4f327a7, type: 3}
   sndStage: {fileID: 8300000, guid: 9299ce10a074b724ab592e592413cf79, type: 3}
   sndOver: {fileID: 8300000, guid: 7711d365d1e1bd14283691c81875278f, type: 3}
-  exp: {fileID: 436098, guid: 1a25d8f711d4497419edca6155cfc670, type: 3}
-  gunFire: {fileID: 489892, guid: 10a1ff6bc6338274b8bc15f7d17f7eeb, type: 3}
+  exp: {fileID: 489892, guid: 10a1ff6bc6338274b8bc15f7d17f7eeb, type: 3}
+  gunFire: {fileID: 436098, guid: 1a25d8f711d4497419edca6155cfc670, type: 3}
   fireBullet: {fileID: 7083682295725411832, guid: 992e914734ae23a4bbe72175da71c87f, type: 3}
-  co2: {fileID: 5953980850782188326, guid: ad7298ff1bb6aeb4986d5f26f5d467bc, type: 3}
-  o2: {fileID: 5095675241203903734, guid: 97b5f13debfe6534c99c75830bbb7f94, type: 3}
+  lets1: {fileID: 5953980850782188326, guid: ad7298ff1bb6aeb4986d5f26f5d467bc, type: 3}
+  dont1: {fileID: 5095675241203903734, guid: 97b5f13debfe6534c99c75830bbb7f94, type: 3}
 --- !u!111 &1668034930
 Animation:
   m_ObjectHideFlags: 0
