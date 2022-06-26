@@ -17,9 +17,9 @@ public class GunCtrl : MonoBehaviour
     //프리팹 exp: 폭파 화염, gunFire: 총구화염, fireBullet: 총알
     public Transform exp, gunFire, fireBullet;
     // 쏘아야 할 것들
-    public Transform co2;
+    public Transform lets1;
     // 쏘면 안되는 것들
-    public Transform o2;
+    public Transform dont1;
 
     // 탄피, 총구위치
     Transform bulletCase, spPoint;
@@ -70,7 +70,7 @@ public class GunCtrl : MonoBehaviour
         // }
 
         RotateGun();
-        MakeCo2();
+        MakeForShoot();
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -196,18 +196,18 @@ public class GunCtrl : MonoBehaviour
         bulletCnt = 10;
     }
 
-    // co2 생성
-    void MakeCo2()
+    // 개체 생성
+    void MakeForShoot()
     {
         if (Random.Range(0, 1000) > 996 && !GetComponent<Animation>().isPlaying)
         {
             if (Random.Range(0,100) < 70)
             {
-                Instantiate(co2);
+                Instantiate(lets1);
             }
             else
             {
-                Instantiate(o2);
+                Instantiate(dont1);
             }
         }
     }
