@@ -197,13 +197,14 @@ GameObject:
   - component: {fileID: 259195956}
   - component: {fileID: 259195955}
   - component: {fileID: 259195954}
+  - component: {fileID: 259195958}
   m_Layer: 0
-  m_Name: BackGround
+  m_Name: MissBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!64 &259195954
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -237,7 +238,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2698cbeb57a529f458f6000be2380e78, type: 2}
+  - {fileID: 2100000, guid: 5f8dc7a2576cc3d4db16d5099788bd81, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -275,12 +276,24 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 259195953}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.3, z: 8}
-  m_LocalScale: {x: 17, y: 10, z: 1}
+  m_LocalPosition: {x: 0, y: -5, z: 13}
+  m_LocalScale: {x: 20, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &259195958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259195953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d468f5e3854db694b8250c9bb5df9d9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &312982948 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100010, guid: d0223f77114284b47a0e8b317e71e4dc, type: 3}
@@ -809,6 +822,7 @@ MonoBehaviour:
   dont2: {fileID: 124025828931859646, guid: e8dbfc8ba633c1e40937b83b95b9b693, type: 3}
   dont3: {fileID: 115808946076386275, guid: 280b8fe381248644ba6e02a940e424e2, type: 3}
   dont4: {fileID: 3757634850739926313, guid: 45973cf22cc4a0643ab904e0bbf583df, type: 3}
+  difficulty: 0
 --- !u!111 &1668034930
 Animation:
   m_ObjectHideFlags: 0
