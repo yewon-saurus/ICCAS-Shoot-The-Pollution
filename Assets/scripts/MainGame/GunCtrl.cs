@@ -229,7 +229,7 @@ public class GunCtrl : MonoBehaviour
     // 개체 생성
     void MakeForShoot()
     {
-        int howMuch = 997;
+        int howMuch = 995;
         
         if (this.difficulty == 1) {
             // time 0 ~ 30
@@ -264,7 +264,7 @@ public class GunCtrl : MonoBehaviour
             // time 60 ~ 90, 90 ~ 120
             // LetsShoot 2개, DontShoot 2개
             // speed 3단계, 4단계
-            howMuch = 995;
+            howMuch = 990;
             if (Random.Range(0, 1000) > howMuch && !GetComponent<Animation>().isPlaying)
             {
                 if (Random.Range(0,100) < 70)
@@ -380,7 +380,7 @@ public class GunCtrl : MonoBehaviour
             // time 240 ~
             // LetsShoot 5개, DontShoot 4개
             // speed 7단계
-            howMuch = 993;
+            howMuch = 980;
             if (Random.Range(0, 1000) > howMuch && !GetComponent<Animation>().isPlaying)
             {
                 if (Random.Range(0,100) < 70)
