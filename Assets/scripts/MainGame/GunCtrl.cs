@@ -142,6 +142,13 @@ public class GunCtrl : MonoBehaviour
 
     void FireGun()
     {
+        // 남은 실탄 수 처리
+        bulletCnt--;
+        if (bulletCnt == 0)
+        {
+            StartCoroutine(ChargeGun());
+        }
+
         // 실탄 장전 애니메이션이 진행중이면 발사금지
         if (GetComponent<Animation>().isPlaying)
         {
@@ -160,13 +167,6 @@ public class GunCtrl : MonoBehaviour
             Debug.Log("충돌체 이름: " + hit.collider.gameObject.name);
         }
 
-        // 총을 클릭하면 실탄 재장전
-        if (hit.transform.tag == "Gun" && bulletCnt < 10)
-        {
-            StartCoroutine(ChargeGun());
-            return;
-        }
-
         // 총구 앞 화면
         Instantiate(gunFire, spPoint.position, Quaternion.identity);
         // 총탄 발사 
@@ -175,13 +175,6 @@ public class GunCtrl : MonoBehaviour
         GetComponent<Animation>().Play("Fire");
 
         CheckTarget(hit);
-
-        // 남은 실탄 수 처리
-        bulletCnt--;
-        if (bulletCnt <= 0)
-        {
-            StartCoroutine(ChargeGun());
-        }
     }
 
     // 목표물 적중여부 판정
