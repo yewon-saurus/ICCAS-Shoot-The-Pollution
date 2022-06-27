@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -633,8 +633,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sndFire: {fileID: 8300000, guid: a384a467796a1314782d61fefbf90e4d, type: 3}
   sndCocking: {fileID: 8300000, guid: b80c41f533b951145b1d3ebae4f327a7, type: 3}
-  sndStage: {fileID: 8300000, guid: 9299ce10a074b724ab592e592413cf79, type: 3}
-  sndOver: {fileID: 8300000, guid: 7711d365d1e1bd14283691c81875278f, type: 3}
+  sndStage: {fileID: 8300000, guid: 475f4837af487ce4a9e68bb227455e4c, type: 3}
+  sndOver: {fileID: 8300000, guid: 6dcf78559a1edec4395d585c1a6431cf, type: 3}
   exp: {fileID: 489892, guid: 10a1ff6bc6338274b8bc15f7d17f7eeb, type: 3}
   gunFire: {fileID: 436098, guid: 1a25d8f711d4497419edca6155cfc670, type: 3}
   fireBullet: {fileID: 7083682295725411832, guid: 992e914734ae23a4bbe72175da71c87f, type: 3}
@@ -666,8 +666,8 @@ AudioSource:
   m_GameObject: {fileID: 1668034927}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9299ce10a074b724ab592e592413cf79, type: 3}
+  OutputAudioMixerGroup: {fileID: 9031106711524626470, guid: 037dcf98e90e6f242adc7e08a159dab1, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 475f4837af487ce4a9e68bb227455e4c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
