@@ -280,7 +280,7 @@ Transform:
   m_LocalScale: {x: 20, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &259195958
 MonoBehaviour:
@@ -530,7 +530,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: d0223f77114284b47a0e8b317e71e4dc, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: d0223f77114284b47a0e8b317e71e4dc, type: 3}
       propertyPath: m_LocalScale.x
@@ -792,7 +792,7 @@ Transform:
   - {fileID: 1118602093}
   - {fileID: 387081100}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1668034929
 MonoBehaviour:
@@ -815,9 +815,9 @@ MonoBehaviour:
   fireBullet: {fileID: 7083682295725411832, guid: 992e914734ae23a4bbe72175da71c87f, type: 3}
   lets1: {fileID: 6013243246086853410, guid: fa3704713f972fb4da722512f73ac512, type: 3}
   lets2: {fileID: 4600112025182326926, guid: eff3bba05e91496439221af3a56d8ba4, type: 3}
-  lets3: {fileID: 5803546962092354335, guid: 5ae25428c993e134db26faea9f0a4167, type: 3}
+  lets3: {fileID: 7893574192016652136, guid: 517f2258c4a668d4e8192ecb45ce3b0b, type: 3}
   lets4: {fileID: 2644237598143019312, guid: b516f757ffec2784398dfda4fb25b16b, type: 3}
-  lets5: {fileID: 7893574192016652136, guid: 517f2258c4a668d4e8192ecb45ce3b0b, type: 3}
+  lets5: {fileID: 5803546962092354335, guid: 5ae25428c993e134db26faea9f0a4167, type: 3}
   dont1: {fileID: 1282437169662000667, guid: 837c6931d054701478fd09bba04804e2, type: 3}
   dont2: {fileID: 124025828931859646, guid: e8dbfc8ba633c1e40937b83b95b9b693, type: 3}
   dont3: {fileID: 115808946076386275, guid: 280b8fe381248644ba6e02a940e424e2, type: 3}
@@ -1000,7 +1000,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2082357714
 GameObject:
@@ -1097,7 +1097,7 @@ Transform:
   m_LocalScale: {x: 17, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2082357719
 MonoBehaviour:
