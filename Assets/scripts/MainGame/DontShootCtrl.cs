@@ -14,6 +14,7 @@ public class DontShootCtrl : MonoBehaviour
 
     int[] dir = { -1, 1 };
     int dirX; // 이동방향
+
     void Start()
     {
         SetPosition();
@@ -36,7 +37,36 @@ public class DontShootCtrl : MonoBehaviour
             // GunCtrl.miss++;
             Destroy(gameObject);
         }
-        
+
+        // 난이도에 따라 속력 조절
+        if (GameObject.Find("Gun").GetComponent<GunCtrl>().difficulty == 1) {
+            speed = Random.Range(3, 4f);
+            // Debug.Log("속도 조절: 난이도 1");
+        }
+        else if (GameObject.Find("Gun").GetComponent<GunCtrl>().difficulty == 2) {
+            speed = Random.Range(3, 5f);
+            // Debug.Log("속도 조절: 난이도 2");
+        }
+        else if (GameObject.Find("Gun").GetComponent<GunCtrl>().difficulty == 3) {
+            speed = Random.Range(3, 5f);
+            // Debug.Log("속도 조절: 난이도 3");
+        }
+        else if (GameObject.Find("Gun").GetComponent<GunCtrl>().difficulty == 4) {
+            speed = Random.Range(3, 6f);
+            // Debug.Log("속도 조절: 난이도 4");
+        }
+        else if (GameObject.Find("Gun").GetComponent<GunCtrl>().difficulty == 5) {
+            speed = Random.Range(4, 6f);
+            // Debug.Log("속도 조절: 난이도 5");
+        }
+        else if (GameObject.Find("Gun").GetComponent<GunCtrl>().difficulty == 6) {
+            speed = Random.Range(5, 7f);
+            // Debug.Log("속도 조절: 난이도 6");
+        }
+        else {
+            speed = Random.Range(4, 7f);
+            // Debug.Log("속도 조절: 난이도 7");
+        }
     }
 
     // Ouch! 쏘면 안되는 것을 쐈을 때
@@ -54,8 +84,8 @@ public class DontShootCtrl : MonoBehaviour
 
     void SetPosition()
     {
-        // 랜덤으로 속도 설정
-        speed = Random.Range(2, 5f);
+        speed = Random.Range(2, 3f);
+        Debug.Log("속도 조절: 난이도 1");
 
         // 추락 속도 설정
         gravity = 2f;
@@ -67,7 +97,7 @@ public class DontShootCtrl : MonoBehaviour
         float posX = -8 * dirX;
 
         // 높이 및 회전설정
-        float posY = Random.Range(2.5f, 4);
+        float posY = Random.Range(1.5f, 3);
         transform.position = new Vector3(posX, posY, 9);
         transform.eulerAngles = new Vector3(-50, 0, Random.Range(10, 20f) * dirX);
     }

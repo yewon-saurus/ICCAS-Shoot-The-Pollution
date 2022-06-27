@@ -5,7 +5,7 @@ using UnityEngine;
 public class Sky : MonoBehaviour
 {
 
-    float speed = 0.001f;
+    float speed = 0.0002f;
     // Update is called once per frame
     void Update()
     {

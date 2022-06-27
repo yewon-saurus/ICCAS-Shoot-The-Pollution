@@ -17,9 +17,9 @@ public class GunCtrl : MonoBehaviour
     //프리팹 exp: 폭파 화염, gunFire: 총구화염, fireBullet: 총알
     public Transform exp, gunFire, fireBullet;
     // 쏘아야 할 것들
-    public Transform lets1;
+    public Transform lets1, lets2, lets3, lets4, lets5;
     // 쏘면 안되는 것들
-    public Transform dont1;
+    public Transform dont1, dont2, dont3, dont4;
 
     // 탄피, 총구위치
     Transform bulletCase, spPoint;
@@ -39,6 +39,12 @@ public class GunCtrl : MonoBehaviour
 
     // 화면 폭, 높이
     int width, height;
+
+    // 게임 진행 시간 
+    float time;
+
+    // 난이도 조절을 위한 변수
+    public int difficulty;
 
     void Start()
     {
@@ -69,6 +75,33 @@ public class GunCtrl : MonoBehaviour
         //     EditorApplication.isPlaying = false;
         // }
 
+        // 게임 진행 시간 
+        time = Time.time - startTime;
+
+        if (time <= 30) {
+            this.difficulty = 1;
+            // Debug.Log("difficulty: " + this.difficulty);
+        }
+        else if (time > 30 && time <= 60) {
+            this.difficulty = 2;
+            Debug.Log("difficulty: " + this.difficulty);
+        }
+        else if (time > 60 && time <= 90) {
+            this.difficulty = 3;
+        }
+        else if (time > 90 && time <= 120) {
+            this.difficulty = 4;
+        }
+        else if (time > 120 && time <= 180) {
+            this.difficulty = 5;
+        }
+        else if (time > 180 && time <= 240) {
+            this.difficulty = 6;
+        }
+        else {
+            this.difficulty = 7;
+        }
+
         RotateGun();
         MakeForShoot();
 
@@ -81,6 +114,10 @@ public class GunCtrl : MonoBehaviour
             StartCoroutine(ChargeGun());
         }
 
+    }
+
+    public int getDifficulty() {
+        return this.difficulty;
     }
 
     // 총 회전 
@@ -199,15 +236,202 @@ public class GunCtrl : MonoBehaviour
     // 개체 생성
     void MakeForShoot()
     {
-        if (Random.Range(0, 1000) > 996 && !GetComponent<Animation>().isPlaying)
-        {
-            if (Random.Range(0,100) < 70)
+        int howMuch = 997;
+        
+        if (this.difficulty == 1) {
+            // time 0 ~ 30
+            // LetsShoot 1개
+            // speed 1단계
+            // 나타나는 갯수도 적음
+            if (Random.Range(0, 1000) > howMuch && !GetComponent<Animation>().isPlaying)
             {
-                Instantiate(lets1);
+                if (Random.Range(0,100) < 70)
+                {
+                    Instantiate(lets1);
+                }
             }
-            else
+        }
+        else if (this.difficulty == 2) {
+            // time 30 ~ 60
+            // LetsShoot 1개, DontShoot 1개
+            // speed 2단계
+            if (Random.Range(0, 1000) > howMuch && !GetComponent<Animation>().isPlaying)
             {
-                Instantiate(dont1);
+                if (Random.Range(0,100) < 70)
+                {
+                    Instantiate(lets1);
+                }
+                else
+                {
+                    Instantiate(dont1);
+                }
+            }
+        }
+        else if (this.difficulty == 3 || this.difficulty == 4) {
+            // time 60 ~ 90, 90 ~ 120
+            // LetsShoot 2개, DontShoot 2개
+            // speed 3단계, 4단계
+            howMuch = 995;
+            if (Random.Range(0, 1000) > howMuch && !GetComponent<Animation>().isPlaying)
+            {
+                if (Random.Range(0,100) < 70)
+                {
+                    if (Random.Range(0,100) < 50)
+                    {
+                        Instantiate(lets1);
+                    }
+                    else
+                    {
+                        Instantiate(lets2);
+                    }
+                    
+                }
+                else
+                {
+                    if (Random.Range(0,100) > 80)
+                    {
+                        Instantiate(dont1);
+                    }
+                    else
+                    {
+                        Instantiate(dont2);
+                    }
+                }
+            }
+        }
+        else if (this.difficulty == 5) {
+            // time 120 ~ 180
+            // LetsShoot 3개, DontShoot 3개
+            // speed 5단계
+            if (Random.Range(0, 1000) > howMuch && !GetComponent<Animation>().isPlaying)
+            {
+                if (Random.Range(0,100) < 70)
+                {
+                    if (Random.Range(0,100) < 30)
+                    {
+                        Instantiate(lets1);
+                    }
+                    else if (Random.Range(0,100) >= 30 && Random.Range(0,100) < 60)
+                    {
+                        Instantiate(lets2);
+                    }
+                    else
+                    {
+                        Instantiate(lets3);
+                    }
+                }
+                else
+                {
+                    if (Random.Range(0,100) > 90)
+                    {
+                        Instantiate(dont1);
+                    }
+                    else if (Random.Range(0,100) <= 90 && Random.Range(0,100) > 80)
+                    {
+                        Instantiate(dont2);
+                    }
+                    else
+                    {
+                        Instantiate(dont3);
+                    }
+                }
+            }
+        }
+        else if (this.difficulty == 6) {
+            // time 180 ~ 240
+            // LetsShoot 4개, DontShoot 4개
+            // speed 6단계
+            if (Random.Range(0, 1000) > howMuch && !GetComponent<Animation>().isPlaying)
+            {
+                if (Random.Range(0,100) < 70)
+                {
+                    if (Random.Range(0,100) < 20)
+                    {
+                        Instantiate(lets1);
+                    }
+                    else if (Random.Range(0,100) >= 20 && Random.Range(0,100) < 40)
+                    {
+                        Instantiate(lets2);
+                    }
+                    else if (Random.Range(0,100) >= 40 && Random.Range(0,100) < 50)
+                    {
+                        Instantiate(lets3);
+                    }
+                    else
+                    {
+                        Instantiate(lets4);
+                    }
+                }
+                else
+                {
+                    if (Random.Range(0,100) > 90)
+                    {
+                        Instantiate(dont1);
+                    }
+                    else if (Random.Range(0,100) <= 90 && Random.Range(0,100) > 85)
+                    {
+                        Instantiate(dont2);
+                    }
+                    else if (Random.Range(0,100) <= 85 && Random.Range(0,100) > 80)
+                    {
+                        Instantiate(dont3);
+                    }
+                    else
+                    {
+                        Instantiate(dont4);
+                    }
+                }
+            }
+        }
+        else {
+            // time 240 ~
+            // LetsShoot 5개, DontShoot 4개
+            // speed 7단계
+            howMuch = 993;
+            if (Random.Range(0, 1000) > howMuch && !GetComponent<Animation>().isPlaying)
+            {
+                if (Random.Range(0,100) < 70)
+                {
+                    if (Random.Range(0,100) < 40)
+                    {
+                        Instantiate(lets1);
+                    }
+                    else if (Random.Range(0,100) >= 40 && Random.Range(0,100) < 50)
+                    {
+                        Instantiate(lets2);
+                    }
+                    else if (Random.Range(0,100) >= 50 && Random.Range(0,100) < 60)
+                    {
+                        Instantiate(lets3);
+                    }
+                    else if (Random.Range(0,100) >= 60 && Random.Range(0,100) < 65)
+                    {
+                        Instantiate(lets4);
+                    }
+                    else
+                    {
+                        Instantiate(lets5);
+                    }
+                }
+                else
+                {
+                    if (Random.Range(0,100) > 95)
+                    {
+                        Instantiate(dont1);
+                    }
+                    else if (Random.Range(0,100) <= 95 && Random.Range(0,100) > 90)
+                    {
+                        Instantiate(dont2);
+                    }
+                    else if (Random.Range(0,100) <= 90 && Random.Range(0,100) > 85)
+                    {
+                        Instantiate(dont3);
+                    }
+                    else
+                    {
+                        Instantiate(dont4);
+                    }
+                }
             }
         }
     }
@@ -247,6 +471,7 @@ public class GunCtrl : MonoBehaviour
         hit = miss = 0;
         bulletCnt = 10;
         gameOver = false;
+        difficulty = 1;
 
         GetComponent<AudioSource>().loop = true;
         GetComponent<AudioSource>().Play();
@@ -255,9 +480,6 @@ public class GunCtrl : MonoBehaviour
     void OnGUI()
     {
         // GUI.skin = skin;
-
-        // 게임 진행 시간 
-        float time = Time.time - startTime;
 
         if (!gameOver)
         {
