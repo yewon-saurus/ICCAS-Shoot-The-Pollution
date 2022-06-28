@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GunCtrl : MonoBehaviour
 {
@@ -470,6 +472,12 @@ public class GunCtrl : MonoBehaviour
         GetComponent<AudioSource>().Play();
     }
 
+    IEnumerator FadeCoroutine()
+    {
+        yield return new WaitForSeconds(3.0f);
+        SceneManager.LoadScene("Result Scene");
+    }
+
     void OnGUI()
     {
         // GUI.skin = skin;
@@ -515,10 +523,12 @@ public class GunCtrl : MonoBehaviour
             }
 
             // Play Game 버튼 생성 및 버튼On 시 게임다시 진행
-            if (GUI.Button(new Rect(width / 2 - 250, height / 2 - 100, 500, 200), "Play Game"))
-            {
-                Application.LoadLevel("MainGame");
-            }
+            // if (GUI.Button(new Rect(width / 2 - 250, height / 2 - 100, 500, 200), "Play Game"))
+            // {
+            //     Application.LoadLevel("MainGame");
+            // }
+
+            StartCoroutine(FadeCoroutine());
         }
     }
 }
