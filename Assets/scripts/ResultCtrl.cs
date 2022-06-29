@@ -15,12 +15,17 @@ public class ResultCtrl : MonoBehaviour
     {
         newRecord.SetActive(false);
         gameOver.SetActive(false);
-        highScoreText.text = GameObject.Find("Gun").GetComponent<GunCtrl>().savedScore.ToString("0");
-        scoreText.text = GameObject.Find("Gun").GetComponent<GunCtrl>().hit.ToString("0");
+
+        string tempSaved = GameObject.Find("Gun").GetComponent<GunCtrl>().savedScore.ToString("0");
+        string tempHit = GameObject.Find("Gun").GetComponent<GunCtrl>().hit.ToString("0");
+        bool tempHigh = GameObject.Find("Gun").GetComponent<GunCtrl>().isHigh;
+
+        highScoreText.text = tempSaved;
+        scoreText.text = tempHit;
 
         // Debug.Log(GameObject.Find("Gun").GetComponent<GunCtrl>().savedScore);
         
-        if (GameObject.Find("Gun").GetComponent<GunCtrl>().isHigh == true) {
+        if (tempHigh == true) {
             // high score 달성 시
             newRecord.SetActive(true);
             Debug.Log("신기록 달성!(ResultCtrl.cs)");
@@ -29,6 +34,11 @@ public class ResultCtrl : MonoBehaviour
             gameOver.SetActive(true);
             Debug.Log("신기록 x");
         }
+    }
+
+    void Start()
+    {
+        GameObject.Find("Gun").SetActive(false);
     }
 
     // Update is called once per frame

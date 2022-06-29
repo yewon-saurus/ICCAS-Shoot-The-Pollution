@@ -500,7 +500,7 @@ public class GunCtrl : MonoBehaviour
         if (!gameOver)
         {
             // 커서 위치에 조준점 표시
-            GUI.DrawTexture(new Rect(Input.mousePosition.x - 24, height - Input.mousePosition.y - 24, 150, 150),
+            GUI.DrawTexture(new Rect(Input.mousePosition.x - 24, height - Input.mousePosition.y - 24, 200, 200),
                             Resources.Load("crossHair") as Texture2D);
         }
         else
@@ -520,8 +520,8 @@ public class GunCtrl : MonoBehaviour
         string sTime = "<color='yellow'><size='60'>Time : " + (int)time + "</size></color>";
 
         GUI.Label(new Rect(60, 40, 240, 80), sHit);
-        GUI.Label(new Rect(width / 2 - 80, 40, 320, 80), sTime);
-        GUI.Label(new Rect(width - 240, 40, 240, 80), sMiss);
+        GUI.Label(new Rect(width / 2 - 100, 40, 320, 80), sTime);
+        GUI.Label(new Rect(width - 280, 40, 240, 80), sMiss);
 
         // string msg = "Shoot : Left Btn  Charge : Gun Click";
         // GUI.Label(new Rect(width - 380, height - 40, 380, 40), msg);
@@ -542,7 +542,7 @@ public class GunCtrl : MonoBehaviour
             // {
             //     Application.LoadLevel("MainGame");
             // }
-
+            
             StartCoroutine(FadeCoroutine());
         }
     }
