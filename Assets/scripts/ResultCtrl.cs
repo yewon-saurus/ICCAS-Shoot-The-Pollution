@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,8 @@ public class ResultCtrl : MonoBehaviour
 
     public GameObject newRecord;
     public GameObject gameOver;
+
+    public Button btnBack;
 
     void Awake()
     {
@@ -39,6 +42,11 @@ public class ResultCtrl : MonoBehaviour
     void Start()
     {
         GameObject.Find("Gun").SetActive(false);
+
+        btnBack.onClick.AddListener(() =>
+        {
+            SceneManager.LoadScene("FirstTitle");
+        });
     }
 
     // Update is called once per frame
