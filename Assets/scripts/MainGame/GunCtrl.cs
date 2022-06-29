@@ -494,7 +494,7 @@ public class GunCtrl : MonoBehaviour
         if (!gameOver)
         {
             // 커서 위치에 조준점 표시
-            GUI.DrawTexture(new Rect(Input.mousePosition.x - 24, height - Input.mousePosition.y - 24, 200, 200),
+            GUI.DrawTexture(new Rect(Input.mousePosition.x - 150, height - Input.mousePosition.y - 150, 300, 300),
                             Resources.Load("crossHair") as Texture2D);
         }
         else
