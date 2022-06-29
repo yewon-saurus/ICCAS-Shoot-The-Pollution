@@ -30,7 +30,7 @@ public class GunCtrl : MonoBehaviour
     static public int miss;
 
     // 성공 횟수
-    int hit;
+    public int hit;
 
     // 남은 총알
     int bulletCnt;
@@ -47,6 +47,16 @@ public class GunCtrl : MonoBehaviour
 
     // 난이도 조절을 위한 변수
     public int difficulty;
+    
+    // 로컬에 점수 저장 for high score
+    public int savedScore = 0;
+    public string KeyString = "HighScore";
+    public bool isHigh = false;
+
+    void Awake() {
+        DontDestroyOnLoad(this.gameObject);
+        savedScore = PlayerPrefs.GetInt(KeyString, 0);
+    }
 
     void Start()
     {
@@ -116,6 +126,11 @@ public class GunCtrl : MonoBehaviour
             StartCoroutine(ChargeGun());
         }
 
+        if (this.hit > savedScore) {
+            isHigh = true;
+            Debug.Log("신기록 달성!(GunGrls.cs)");
+            PlayerPrefs.SetInt(KeyString, this.hit);
+        }
     }
 
     public int getDifficulty() {
@@ -231,7 +246,7 @@ public class GunCtrl : MonoBehaviour
     // 개체 생성
     void MakeForShoot()
     {
-        int howMuch = 995;
+        int howMuch = 997;
         
         if (this.difficulty == 1) {
             // time 0 ~ 30
@@ -266,7 +281,7 @@ public class GunCtrl : MonoBehaviour
             // time 60 ~ 90, 90 ~ 120
             // LetsShoot 2개, DontShoot 2개
             // speed 3단계, 4단계
-            howMuch = 990;
+            howMuch = 995;
             if (Random.Range(0, 1000) > howMuch && !GetComponent<Animation>().isPlaying)
             {
                 if (Random.Range(0,100) < 70)
@@ -382,7 +397,7 @@ public class GunCtrl : MonoBehaviour
             // time 240 ~
             // LetsShoot 5개, DontShoot 4개
             // speed 7단계
-            howMuch = 980;
+            howMuch = 994;
             if (Random.Range(0, 1000) > howMuch && !GetComponent<Animation>().isPlaying)
             {
                 if (Random.Range(0,100) < 70)
@@ -500,8 +515,8 @@ public class GunCtrl : MonoBehaviour
         }
 
         // 점수 등 변수 표시
-        string sHit = "<size='60'>HIT : " + hit + "</size>";
-        string sMiss = "<size='60'>MISS : " + miss + "</size>";
+        string sHit = "<size='40'>HIT : " + hit + "</size>";
+        string sMiss = "<size='40'>MISS : " + miss + " / 10</size>";
         string sTime = "<color='yellow'><size='60'>Time : " + (int)time + "</size></color>";
 
         GUI.Label(new Rect(60, 40, 240, 80), sHit);
