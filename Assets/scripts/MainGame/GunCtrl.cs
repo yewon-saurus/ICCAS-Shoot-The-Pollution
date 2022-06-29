@@ -90,24 +90,24 @@ public class GunCtrl : MonoBehaviour
         // 게임 진행 시간 
         time = Time.time - startTime;
 
-        if (time <= 30) {
+        if (time <= 10) {
             this.difficulty = 1;
             // Debug.Log("difficulty: " + this.difficulty);
         }
-        else if (time > 30 && time <= 60) {
+        else if (time > 10 && time <= 30) {
             this.difficulty = 2;
             Debug.Log("difficulty: " + this.difficulty);
         }
-        else if (time > 60 && time <= 90) {
+        else if (time > 30 && time <= 50) {
             this.difficulty = 3;
         }
-        else if (time > 90 && time <= 120) {
+        else if (time > 50 && time <= 90) {
             this.difficulty = 4;
         }
-        else if (time > 120 && time <= 180) {
+        else if (time > 90 && time <= 130) {
             this.difficulty = 5;
         }
-        else if (time > 180 && time <= 240) {
+        else if (time > 130 && time <= 180) {
             this.difficulty = 6;
         }
         else {
@@ -246,10 +246,9 @@ public class GunCtrl : MonoBehaviour
     // 개체 생성
     void MakeForShoot()
     {
-        int howMuch = 997;
+        int howMuch = 996;
         
         if (this.difficulty == 1) {
-            // time 0 ~ 30
             // LetsShoot 1개
             // speed 1단계
             // 나타나는 갯수도 적음
@@ -262,7 +261,6 @@ public class GunCtrl : MonoBehaviour
             }
         }
         else if (this.difficulty == 2) {
-            // time 30 ~ 60
             // LetsShoot 1개, DontShoot 1개
             // speed 2단계
             if (Random.Range(0, 1000) > howMuch && !GetComponent<Animation>().isPlaying)
@@ -278,10 +276,9 @@ public class GunCtrl : MonoBehaviour
             }
         }
         else if (this.difficulty == 3 || this.difficulty == 4) {
-            // time 60 ~ 90, 90 ~ 120
             // LetsShoot 2개, DontShoot 2개
             // speed 3단계, 4단계
-            howMuch = 995;
+            howMuch = 994;
             if (Random.Range(0, 1000) > howMuch && !GetComponent<Animation>().isPlaying)
             {
                 if (Random.Range(0,100) < 70)
@@ -310,7 +307,6 @@ public class GunCtrl : MonoBehaviour
             }
         }
         else if (this.difficulty == 5) {
-            // time 120 ~ 180
             // LetsShoot 3개, DontShoot 3개
             // speed 5단계
             if (Random.Range(0, 1000) > howMuch && !GetComponent<Animation>().isPlaying)
@@ -348,7 +344,6 @@ public class GunCtrl : MonoBehaviour
             }
         }
         else if (this.difficulty == 6) {
-            // time 180 ~ 240
             // LetsShoot 4개, DontShoot 4개
             // speed 6단계
             if (Random.Range(0, 1000) > howMuch && !GetComponent<Animation>().isPlaying)
@@ -394,10 +389,9 @@ public class GunCtrl : MonoBehaviour
             }
         }
         else {
-            // time 240 ~
             // LetsShoot 5개, DontShoot 4개
             // speed 7단계
-            howMuch = 994;
+            howMuch = 992;
             if (Random.Range(0, 1000) > howMuch && !GetComponent<Animation>().isPlaying)
             {
                 if (Random.Range(0,100) < 70)
@@ -542,7 +536,7 @@ public class GunCtrl : MonoBehaviour
             // {
             //     Application.LoadLevel("MainGame");
             // }
-            
+
             StartCoroutine(FadeCoroutine());
         }
     }
