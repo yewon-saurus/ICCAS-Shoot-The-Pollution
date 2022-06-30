@@ -246,7 +246,7 @@ public class GunCtrl : MonoBehaviour
     // 개체 생성
     void MakeForShoot()
     {
-        int howMuch = 996;
+        int howMuch = 995;
         
         if (this.difficulty == 1) {
             // LetsShoot 1개
@@ -254,7 +254,7 @@ public class GunCtrl : MonoBehaviour
             // 나타나는 갯수도 적음
             if (Random.Range(0, 1000) > howMuch && !GetComponent<Animation>().isPlaying)
             {
-                if (Random.Range(0,100) < 70)
+                if (Random.Range(0,100) < 80)
                 {
                     Instantiate(lets1);
                 }
@@ -278,12 +278,12 @@ public class GunCtrl : MonoBehaviour
         else if (this.difficulty == 3 || this.difficulty == 4) {
             // LetsShoot 2개, DontShoot 2개
             // speed 3단계, 4단계
-            howMuch = 994;
+            howMuch = 992;
             if (Random.Range(0, 1000) > howMuch && !GetComponent<Animation>().isPlaying)
             {
                 if (Random.Range(0,100) < 70)
                 {
-                    if (Random.Range(0,100) < 50)
+                    if (Random.Range(0,100) < 20)
                     {
                         Instantiate(lets1);
                     }
@@ -295,7 +295,7 @@ public class GunCtrl : MonoBehaviour
                 }
                 else
                 {
-                    if (Random.Range(0,100) > 80)
+                    if (Random.Range(0,100) > 90)
                     {
                         Instantiate(dont1);
                     }
@@ -313,11 +313,11 @@ public class GunCtrl : MonoBehaviour
             {
                 if (Random.Range(0,100) < 70)
                 {
-                    if (Random.Range(0,100) < 30)
+                    if (Random.Range(0,100) < 10)
                     {
                         Instantiate(lets1);
                     }
-                    else if (Random.Range(0,100) >= 30 && Random.Range(0,100) < 60)
+                    else if (Random.Range(0,100) >= 10 && Random.Range(0,100) < 30)
                     {
                         Instantiate(lets2);
                     }
@@ -328,11 +328,11 @@ public class GunCtrl : MonoBehaviour
                 }
                 else
                 {
-                    if (Random.Range(0,100) > 90)
+                    if (Random.Range(0,100) > 95)
                     {
                         Instantiate(dont1);
                     }
-                    else if (Random.Range(0,100) <= 90 && Random.Range(0,100) > 80)
+                    else if (Random.Range(0,100) <= 95 && Random.Range(0,100) > 85)
                     {
                         Instantiate(dont2);
                     }
@@ -350,15 +350,15 @@ public class GunCtrl : MonoBehaviour
             {
                 if (Random.Range(0,100) < 70)
                 {
-                    if (Random.Range(0,100) < 20)
+                    if (Random.Range(0,100) < 10)
                     {
                         Instantiate(lets1);
                     }
-                    else if (Random.Range(0,100) >= 20 && Random.Range(0,100) < 40)
+                    else if (Random.Range(0,100) >= 10 && Random.Range(0,100) < 20)
                     {
                         Instantiate(lets2);
                     }
-                    else if (Random.Range(0,100) >= 40 && Random.Range(0,100) < 50)
+                    else if (Random.Range(0,100) >= 20 && Random.Range(0,100) < 45)
                     {
                         Instantiate(lets3);
                     }
@@ -369,15 +369,15 @@ public class GunCtrl : MonoBehaviour
                 }
                 else
                 {
-                    if (Random.Range(0,100) > 90)
+                    if (Random.Range(0,100) > 95)
                     {
                         Instantiate(dont1);
                     }
-                    else if (Random.Range(0,100) <= 90 && Random.Range(0,100) > 85)
+                    else if (Random.Range(0,100) <= 95 && Random.Range(0,100) > 90)
                     {
                         Instantiate(dont2);
                     }
-                    else if (Random.Range(0,100) <= 85 && Random.Range(0,100) > 80)
+                    else if (Random.Range(0,100) <= 90 && Random.Range(0,100) > 80)
                     {
                         Instantiate(dont3);
                     }
@@ -391,24 +391,24 @@ public class GunCtrl : MonoBehaviour
         else {
             // LetsShoot 5개, DontShoot 4개
             // speed 7단계
-            howMuch = 992;
+            howMuch = 989;
             if (Random.Range(0, 1000) > howMuch && !GetComponent<Animation>().isPlaying)
             {
                 if (Random.Range(0,100) < 70)
                 {
-                    if (Random.Range(0,100) < 40)
+                    if (Random.Range(0,100) < 5)
                     {
                         Instantiate(lets1);
                     }
-                    else if (Random.Range(0,100) >= 40 && Random.Range(0,100) < 50)
+                    else if (Random.Range(0,100) >= 5 && Random.Range(0,100) < 15)
                     {
                         Instantiate(lets2);
                     }
-                    else if (Random.Range(0,100) >= 50 && Random.Range(0,100) < 60)
+                    else if (Random.Range(0,100) >= 15 && Random.Range(0,100) < 30)
                     {
                         Instantiate(lets3);
                     }
-                    else if (Random.Range(0,100) >= 60 && Random.Range(0,100) < 65)
+                    else if (Random.Range(0,100) >= 30 && Random.Range(0,100) < 50)
                     {
                         Instantiate(lets4);
                     }
