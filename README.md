@@ -58,12 +58,3 @@ How we designed it(Diagram) 👾
 
 ![class](https://user-images.githubusercontent.com/53112143/178263981-a1e6b60b-ec4a-4ac0-8cba-c3dfd848feb2.png)
 </details>
-
-# Download
-
-[Shoot The Pollution v1.1](https://drive.google.com/file/d/1sKmHChGI4je9jQifjIKuZ_cUSoLu4Cal/view?usp=sharing)
-
-![image](https://user-images.githubusercontent.com/53112143/178263158-f26787eb-06c6-4050-b239-cd8628ab60f8.png)
-
-
-
